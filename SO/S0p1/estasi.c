@@ -60,13 +60,13 @@
 				}     
 		}     
 		if(i == 1){
-			wait(NULL);//Espera ejec
+			wait();//Espera ejec
 			printf("Soy ejec(%d) y muero\n", *(mispids)); 
 		}     
 		if(i == 2){
 		          signal(10, pstree); 
 		          signal(12, despierta);
-		          wait(NULL); //Espera A.       
+		          wait(); //Espera A.       
 		          printf("Soy A(%d) y muero\n", *(mispids+1));    
 		          }     
 		if(i == 3){        
@@ -134,27 +134,18 @@
 			      	}           
 			      		if(j==1)
 			      		{
+			      			pause();
 							printf("Soy X(%d) y muero\n", *(mispids+3));
 			      		}else if(j==2)
 			      		{
+			      			pause();
 			      			printf("Soy Y(%d) y muero\n", *(mispids+4));
+			      			kill(*(mispids+2+1), SIGUSR2);
 			      		}else if(j==3)
 			      		{
 			      			printf("Soy Z(%d) y muero\n", getpid());
-				      		//exit(0);
-			      		}        
-			      		/*switch(j){             
-				      		case 1:               
-				      							               
-				      		break;             
-				      		case 2:               
-				      			printf("Soy Y(%d) y muero\n", *(mispids+4));               
-				      		break;             
-				      		case 3:               
-				      			printf("Soy Z(%d) y muero\n", getpid());
-				      			exit(0);               
-				      		break;           
-			      		}   */        
+			      			kill(*(mispids+2+2), SIGUSR2);
+			      		}                
 		      		break;         
 		      		}       
 		      		}       
@@ -162,7 +153,7 @@
 		      			signal(SIGUSR1, pstree);         
 		      			signal(SIGUSR2, despierta);                
 		      			for(k = 1; k <= 3; k++){//Espera B.       
-		      				wait(NULL);         
+		      				wait();         
 		      			}         
 		      			printf("Soy B(%d) y muero\n", *(mispids+2));       
 		      			}     
