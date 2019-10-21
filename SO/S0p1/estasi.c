@@ -19,14 +19,14 @@
 		if(fork() == 0)      
 			execlp("ls", "ls", NULL);   
 		else     
-			wait(NULL); 
+			wait(); 
 	}  
 	
 	void pstree(){     
 		if(fork() == 0)     
 			execlp("pstree", "pstree", "-p", NULL);   
 		else     
-			wait(NULL); 
+			wait(); 
 	} 
 
 
