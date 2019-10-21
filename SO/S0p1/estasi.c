@@ -131,10 +131,21 @@
 				      		break;               
 				      		}             
 			      	break;           
-			      	}                      
-			      		switch(j){             
+			      	}           
+			      		if(j==1)
+			      		{
+							printf("Soy X(%d) y muero\n", *(mispids+3));
+			      		}else if(j==2)
+			      		{
+			      			printf("Soy Y(%d) y muero\n", *(mispids+4));
+			      		}else if(j==3)
+			      		{
+			      			printf("Soy Z(%d) y muero\n", getpid());
+				      		//exit(0);
+			      		}        
+			      		/*switch(j){             
 				      		case 1:               
-				      			printf("Soy X(%d) y muero\n", *(mispids+3));               
+				      							               
 				      		break;             
 				      		case 2:               
 				      			printf("Soy Y(%d) y muero\n", *(mispids+4));               
@@ -143,7 +154,7 @@
 				      			printf("Soy Z(%d) y muero\n", getpid());
 				      			exit(0);               
 				      		break;           
-			      		}           
+			      		}   */        
 		      		break;         
 		      		}       
 		      		}       
