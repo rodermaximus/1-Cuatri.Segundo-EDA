@@ -55,7 +55,7 @@
       		        }         
       		        if(i == 2){
       		            *(mispids+i)=getpid();
-					    printf("Soy el proceso B: mi pid es %d %d. Mi padre %d. Mi abuelo %d\n",getpid(), *(mispids+2), *(mispids+1), *(mispids));  
+					    printf("Soy el proceso B: mi pid es %d. Mi padre %d. Mi abuelo %d\n", *(mispids+2), *(mispids+1), *(mispids));  
 					 }
 				}     
 		}     
@@ -152,7 +152,7 @@
 		      		if(j == 4){         
 		      			signal(SIGUSR1, pstree);         
 		      			signal(SIGUSR2, despierta);                
-		      			for(k = 1; k <= 3; k++){//Espera B.       
+		      			for(k = 3; k > 0; k--){//Espera B.       
 		      				wait();         
 		      			}         
 		      			printf("Soy B(%d) y muero\n", *(mispids+2));       
