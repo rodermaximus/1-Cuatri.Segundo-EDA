@@ -79,14 +79,14 @@
 			            *(mispids+2+1)=getpid();
 			            signal(SIGUSR1, ls);               
 			            signal(SIGUSR2, despierta);                             
-			            pause();                        
+			            pause();//Espera X                        
 		            break;             
 		            case 2:                              
 			            printf("Soy el proceso Y: mi pid es %d. Mi padre %d. Mi abuelo %d. Mi bisabuelo %d\n", getpid(),*(mispids+2), *(mispids+1), *(mispids));               
 			            *(mispids+2+2)=getpid();
 			            signal(SIGUSR1, ls);               
 			            signal(SIGUSR2, despierta);
-			            pause();                         
+			            pause();//Espera Y                         
 		            break;
 		           	case 3:               
 			           	printf("Soy el proceso Z: mi pid es %d. Mi padre %d. Mi abuelo %d. Mi bisabuelo %d\n", getpid(),*(mispids+2), *(mispids+1), *(mispids));              
