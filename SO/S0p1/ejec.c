@@ -66,6 +66,7 @@
 		if(i == 2){
 		          signal(10, pstree); 
 		          signal(12, despierta);
+		          pause();
 		          wait(); //Espera A.       
 		          printf("Soy A(%d) y muero\n", *(mispids+1));    
 		          }     
